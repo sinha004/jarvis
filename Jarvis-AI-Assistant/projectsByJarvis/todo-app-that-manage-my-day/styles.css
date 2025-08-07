@@ -1,0 +1,196 @@
+/*
+File: styles.css
+Purpose: Styling for a todo app (Manage My Day project)
+Features: Core functionality, Responsive design, Modern UI
+*/
+
+/* CSS Reset (Normalize) - Consistent styling across browsers */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Custom Properties (CSS Variables) */
+:root {
+  --primary-color: #3498db;
+  --secondary-color: #e74c3c;
+  --accent-color: #f39c12;
+  --background-color: #f4f4f4;
+  --text-color: #333;
+  --light-text-color: #777;
+  --border-color: #ddd;
+  --box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  --transition-duration: 0.3s;
+  --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* General Styles */
+body {
+  font-family: var(--font-family);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column; /* Ensure footer stays at the bottom */
+}
+
+/* Container for centering content */
+.container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: var(--box-shadow);
+  flex: 1; /* Allow content to grow and fill available space */
+}
+
+/* Header Styles */
+header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+header h1 {
+  color: var(--primary-color);
+  font-size: clamp(2rem, 5vw, 3rem); /* Responsive font size */
+}
+
+/* Form Styles */
+#new-task-form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+input[type="text"] {
+  flex-grow: 1;
+  padding: 10px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color var(--transition-duration) ease;
+}
+
+button:hover {
+  background-color: darken(var(--primary-color), 10%); /* Darken on hover */
+}
+
+/* Task List Styles */
+#task-list {
+  list-style: none;
+  padding: 0;
+}
+
+.task-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid var(--border-color);
+  transition: background-color var(--transition-duration) ease;
+}
+
+.task-item:last-child {
+  border-bottom: none;
+}
+
+.task-item:hover {
+  background-color: #f9f9f9;
+}
+
+.task-item .task-content {
+  flex-grow: 1;
+  word-break: break-word; /* Prevent overflow */
+}
+
+.task-item .task-content.completed {
+  text-decoration: line-through;
+  color: var(--light-text-color);
+}
+
+.task-item .actions {
+  display: flex;
+  gap: 5px;
+}
+
+.task-item .actions button {
+  padding: 5px 10px;
+  font-size: 0.8rem;
+}
+
+/* Checkbox styles */
+input[type="checkbox"] {
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+/* Footer Styles */
+footer {
+  text-align: center;
+  padding: 10px;
+  background-color: #eee;
+  color: var(--light-text-color);
+  margin-top: auto; /* Stick footer to bottom */
+}
+
+/* Loading State */
+.loading {
+  opacity: 0.5;
+  pointer-events: none; /* Disable interactions */
+  cursor: wait;
+}
+
+/* Micro-animations (Example: pulsing effect) */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.pulsing {
+  animation: pulse 2s infinite;
+}
+
+/* Media Queries (Responsive Design) */
+@media (max-width: 600px) {
+  .container {
+    padding: 10px;
+  }
+
+  #new-task-form {
+    flex-direction: column; /* Stack input and button on smaller screens */
+  }
+
+  button {
+    width: 100%; /* Make button full width */
+  }
+
+  .task-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .task-item .actions {
+    margin-top: 5px;
+  }
+}
