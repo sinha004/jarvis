@@ -184,5 +184,9 @@ GEMINI_API_KEY=your-gemini-api-key-here
 - Windows Speech API for voice features
 - Node.js community for excellent tooling
 
+
+## Creator
+- Pulkit Sinha
 ---
+
 
