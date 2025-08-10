@@ -1,4 +1,4 @@
-# Jarvis AI ASSISTANT
+# Jarvis AI Assistant
 
 An intelligent AI-powered project generator and assistant that creates complete web applications using modern technologies.
 
