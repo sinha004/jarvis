@@ -185,7 +185,7 @@ GEMINI_API_KEY=your-gemini-api-key-here
 - Node.js community for excellent tooling
 
 
-## Creator
+## 👨🏻‍🎓 Creator
 - Pulkit Sinha
 ---
 
