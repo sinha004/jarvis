@@ -185,8 +185,9 @@ GEMINI_API_KEY=your-gemini-api-key-here
 - Node.js community for excellent tooling
 
 
-## 👨🏻‍🎓 Creator
-- Pulkit Sinha
+## 👨‍💻 **Developer Info**
+- **Name**: Pulkit Sinha
+- **University**: Indian Institute of Technology (Indian School of Mines) Dhanbad
 ---
 
 
